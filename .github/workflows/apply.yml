@@ -1,0 +1,56 @@
+name: 'Apply Terraform'
+on:
+  push:
+    branches:
+      - master
+env:
+  GOOGLE_CREDENTIALS: ${{secrets.GOOGLE_CREDENTIALS}}
+  GOOGLE_APPLICATION_CREDENTIALS: ${{github.workspace}}/account.json
+jobs:
+  terraform:
+    name: 'apply terraform'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout '
+        uses: actions/checkout@master
+      - name: Cache TF .terraform folders
+        id: tf-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            1-org/.terraform/
+            2-networks/.terraform/
+            3-projects/.terraform/
+          key: "1" # should we key to something useful like e.g. TF version?
+      # --------- prep setup gcloud ---
+      # https://github.com/terraform-google-modules/terraform-google-project-factory#software
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: '0.12.28'
+      - name: drop credentials as file
+        run: echo "$GOOGLE_CREDENTIALS" > "$GOOGLE_APPLICATION_CREDENTIALS"
+
+      # - uses: actions/setup-python@v1
+      #   with:
+      #     python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+      # - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      # --------- Stage 0 -------------
+      # TODO currently the SA doesn't have permission to run this. This needs to be run by an admin manually from the dev machine
+      # - run: cd "0-bootstrap"
+      # - run: terraform init -no-color
+      # - run: terraform apply -no-color
+      # --------- Stage 1 -------------
+      - run: terraform init -no-color
+        working-directory: 1-org
+      - run: terraform apply -no-color --auto-approve
+        working-directory: 1-org
+      # --------- Stage 2 -------------
+      - run: terraform init -no-color
+        working-directory: 2-networks
+      - run: terraform apply -no-color --auto-approve
+        working-directory: 2-networks
+      # --------- Stage 3 -------------
+      - run: terraform init -no-color
+        working-directory: 3-projects
+      - run: terraform apply -no-color --auto-approve
+        working-directory: 3-projects

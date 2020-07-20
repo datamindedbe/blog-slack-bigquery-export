@@ -1,0 +1,385 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "bot_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "bot_link",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "channel",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "client_msg_id",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "comment",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "created",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "id",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "is_intro",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "timestamp",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "user",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "comment",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "display_as_bot",
+    "type": "BOOLEAN"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "user",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "edited",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "editor_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "hidden",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "inviter",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "is_intro",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "last_read",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "latest_reply",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "no_notifications",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "old_name",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "original_ts",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "parent_user_id",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "permalink",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "block_id",
+            "type": "STRING"
+          },
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "mode": "NULLABLE",
+                    "name": "text",
+                    "type": "STRING"
+                  },
+                  {
+                    "mode": "NULLABLE",
+                    "name": "type",
+                    "type": "STRING"
+                  }
+                ],
+                "mode": "REPEATED",
+                "name": "elements",
+                "type": "RECORD"
+              },
+              {
+                "mode": "NULLABLE",
+                "name": "type",
+                "type": "STRING"
+              }
+            ],
+            "mode": "REPEATED",
+            "name": "elements",
+            "type": "RECORD"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "type",
+            "type": "STRING"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "blocks",
+        "type": "RECORD"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "text",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "previous",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "purpose",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "count",
+        "type": "INTEGER"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "mode": "REPEATED",
+        "name": "users",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "reactions",
+    "type": "RECORD"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "ts",
+        "type": "TIMESTAMP"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "user",
+        "type": "STRING"
+      }
+    ],
+    "mode": "REPEATED",
+    "name": "replies",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "reply_count",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "reply_users",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "reply_users_count",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "source_team",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "subscribed",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "subtype",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "team",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "text",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "thread_ts",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "topic",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ts",
+    "type": "TIMESTAMP"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "upload",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "upload_reply_to",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user",
+    "type": "STRING"
+  },
+  {
+    "fields": [
+      {
+        "mode": "NULLABLE",
+        "name": "avatar_hash",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "display_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "first_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "image_72",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "is_restricted",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "is_ultra_restricted",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "real_name",
+        "type": "STRING"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "team",
+        "type": "STRING"
+      }
+    ],
+    "mode": "NULLABLE",
+    "name": "user_profile",
+    "type": "RECORD"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "user_team",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "username",
+    "type": "STRING"
+  },
+  {
+    "mode": "REPEATED",
+    "name": "x_files",
+    "type": "STRING"
+  }
+]

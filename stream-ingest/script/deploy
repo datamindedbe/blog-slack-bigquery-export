@@ -1,0 +1,13 @@
+#!/bin/bash
+set -xe
+
+ROOT=$(git rev-parse --show-toplevel)
+cd $ROOT/ingest
+
+#deploy function
+gcloud functions deploy ingest \
+      --runtime python37 \
+      --timeout 540 \
+      --region=europe-west1 \
+      --trigger-http \
+      --entry-point main --verbosity=debug

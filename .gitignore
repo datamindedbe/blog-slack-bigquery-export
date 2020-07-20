@@ -1,0 +1,8 @@
+artifacts/
+.vscode/
+
+**/.terraform/
+infra/secrets.auto.tfvars
+**/.ipynb_checkpoints/
+**/Untitled.ipynb
+newline_delimited_events.json
